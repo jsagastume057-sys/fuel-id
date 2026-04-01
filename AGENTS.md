@@ -2,16 +2,21 @@
 
 ## Cursor Cloud specific instructions
 
-This is a new, empty repository ("fuel-id"). As of initial setup, it contains only a `README.md`. There are no applications, dependencies, tests, lint configs, or build systems to run.
+This repository contains a Next.js website for **FuelID Lunch Delivery** — a farm-fresh school lunch delivery pilot program landing page.
 
-### Current state
-- **Language/framework**: Not yet determined
-- **Package manager**: None configured
-- **Services**: None
-- **Tests**: None
-- **Lint**: None
-- **Build**: None
+### Project layout
+- All website code lives in `test-cursor-fuelid-website-development-076d/`
+- Stack: Next.js 16 (App Router), TypeScript, Tailwind CSS v4, localStorage (no backend/auth)
 
-### Notes for future agents
-- When application code is added, update this file with service startup instructions, test commands, and any non-obvious caveats.
-- Update the VM environment setup script (via `SetupVmEnvironment`) once a dependency manager is chosen.
+### Common commands
+Run from `test-cursor-fuelid-website-development-076d/`:
+- `npm run dev` — start dev server on port 3000
+- `npm run build` — production build
+- `npm run lint` — ESLint
+- No automated test suite exists yet
+
+### Non-obvious notes
+- The project uses `package-lock.json` (npm), not pnpm or yarn.
+- External images (Unsplash, momables.com) are allowed via `next.config.ts` `remotePatterns`.
+- The app is purely client-side — no database, no API routes, no authentication. State is stored in `localStorage`.
+- The `components/AppShell.tsx` "Baseline" planner app is imported but not currently rendered from the main `app/page.tsx` landing page; `page.tsx` renders the FuelID landing page directly.
